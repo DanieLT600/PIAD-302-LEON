@@ -1,0 +1,51 @@
+SELECT * FROM Customers;
+
+-- USO DE WILDCARDS
+
+SELECT * FROM Customers
+WHERE ContactName LIKE 'A%'
+
+SELECT * FROM  Customers
+WHERE CustomerID LIKE '%N'
+
+SELECT * FROM Customers
+WHERE CustomerID LIKE 'AN__'
+
+SELECT * FROM Customers
+WHERE CUSTOMERID LIKE '__O__'
+
+
+SELECT * FROM Customers
+WHERE Address LIKE '%Av%'
+
+SELECT * FROM Customers
+WHERE Country LIKE 
+
+
+-- Uso del In
+Select * FROM Employees
+wHERE TitleOfCourtesy IN ('Ms.', 'Mr.', 'Mrs.')
+
+Select * FROM Employees
+WHERE City IN ('Seattle', 'Tacoma', 'Redmond')
+
+SELECT * FROM Customers
+GROUP BY ContactTitle
+
+SELECT  City, COUNT(*)FROM Customers -- Contar los Registros
+GROUP BY City
+Order By Count(*) desc
+
+SELECT COUNT(*) 'Cantidad' FROM Orders
+GROUP BY ShipCountry
+ORDER BY COUNT(*)
+
+
+
+Select SUM(UnitPrice) FROM Products; -- Sumas los precios unitarios de los productos.
+SELECT AVG(UnitPrice) FROM Products; -- Promedio de los precios unitarios
+
+
+
+-- CustomerId = Termine en N === ?
+-- CustomerId= A == ?
