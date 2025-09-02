@@ -1,0 +1,29 @@
+
+
+--CREAR UN SOTRE PROCEDURE PARA SUMAR
+--Eejmplo: Como crear un procedimiento almacenado
+
+CREATE PROC SumarNumeros
+(
+  @numero1 int,
+  @numero2 int
+)
+AS
+  print '' + @numero1 + @numero2 + '';
+
+
+  EXEC SumarNumeros 100, 200;
+
+
+  --Crear 4 procedimientos
+
+  CREATE PROC Multiplicar
+(
+  @numero1 int,
+  @numero2 int
+)
+AS
+  print '' + @numero1 * @numero2 + '';
+
+
+  EXEC Multiplicar 1, 20;
