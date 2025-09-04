@@ -1,0 +1,41 @@
+CREATE TABLE tareas (
+    id INT IDENTITY(1,1)  PRIMARY KEY,
+    nota INT NOT NULL
+)
+ 
+INSERT INTO tareas(nota) VALUES (18);
+ 
+
+CREATE TABLE evaluacionesparciales (
+    id INT IDENTITY(1,1) PRIMARY KEY, 
+    nota INT NOT NULL             
+);
+ 
+INSERT INTO evaluacionesparciales(nota) VALUES (14);
+ 
+CREATE TABLE Informes_prac (
+     id INT IDENTITY(1,1) PRIMARY KEY,
+     nota INT NOT NULL
+);
+ 
+INSERT INTO Informes_prac(nota) VALUES (15);
+ 
+SELECT * FROM evaluacionesparciales
+ 
+ GO 
+
+CREATE PROCEDURE sp_promedio(
+AS
+BEGIN
+    SET NOCOUNT ON;
+ 
+    SELECT 
+        (
+            (SELECT AVG(nota) FROM tareas) +
+            (SELECT AVG(nota) FROM evaluacionesparciales) +
+            (SELECT AVG(nota) FROM Informes_prac)
+        ) / 3  AS PromedioFinal;
+ 
+END;
+
+EXECUTE sp_promediogit
